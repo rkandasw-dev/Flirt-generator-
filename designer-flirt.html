@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designer Flirt Lines 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --rose: #FF6B9D;
+            --deep-rose: #C94277;
+            --cream: #FFF5F7;
+            --charcoal: #2D2D34;
+            --gold: #FFD700;
+            --shadow: rgba(255, 107, 157, 0.3);
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: linear-gradient(135deg, #FFE5EC 0%, #FFC2D4 50%, #FFB3C6 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '♥';
+            position: absolute;
+            font-size: 200px;
+            color: rgba(255, 255, 255, 0.1);
+            top: -50px;
+            right: -50px;
+            animation: float 6s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '♥';
+            position: absolute;
+            font-size: 150px;
+            color: rgba(255, 255, 255, 0.08);
+            bottom: -30px;
+            left: -30px;
+            animation: float 8s ease-in-out infinite;
+            animation-delay: 2s;
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card {
+            background: white;
+            border-radius: 30px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--rose), var(--gold), var(--deep-rose));
+            border-radius: 30px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card.active::before {
+            opacity: 1;
+            animation: borderGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            text-align: center;
+            background: linear-gradient(135deg, var(--rose) 0%, var(--deep-rose) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--charcoal);
+            opacity: 0.6;
+            font-size: 0.95rem;
+            margin-bottom: 40px;
+            letter-spacing: 0.5px;
+        }
+
+        .designer-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .designer-option {
+            padding: 18px;
+            border: 2px solid #FFE5EC;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            background: var(--cream);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .designer-option::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 157, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .designer-option:hover::before {
+            left: 100%;
+        }
+
+        .designer-option:hover {
+            border-color: var(--rose);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px var(--shadow);
+        }
+
+        .designer-option.selected {
+            background: linear-gradient(135deg, var(--rose), var(--deep-rose));
+            border-color: var(--deep-rose);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px var(--shadow);
+        }
+
+        .designer-emoji {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 8px;
+            animation: bounce 2s infinite;
+        }
+
+        .designer-option:nth-child(1) .designer-emoji { animation-delay: 0s; }
+        .designer-option:nth-child(2) .designer-emoji { animation-delay: 0.2s; }
+        .designer-option:nth-child(3) .designer-emoji { animation-delay: 0.4s; }
+        .designer-option:nth-child(4) .designer-emoji { animation-delay: 0.6s; }
+        .designer-option:nth-child(5) .designer-emoji { animation-delay: 0.8s; }
+        .designer-option:nth-child(6) .designer-emoji { animation-delay: 1s; }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .designer-label {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .flirt-display {
+            background: linear-gradient(135deg, #FFF5F7 0%, #FFE5EC 100%);
+            border-radius: 20px;
+            padding: 30px;
+            min-height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            border: 2px dashed #FFB3C6;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .flirt-display::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 60px;
+            font-family: 'Playfair Display', serif;
+            color: var(--rose);
+            opacity: 0.2;
+        }
+
+        .flirt-display::after {
+            content: '"';
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            font-size: 60px;
+            font-family: 'Playfair Display', serif;
+            color: var(--rose);
+            opacity: 0.2;
+        }
+
+        .flirt-text {
+            font-size: 1.3rem;
+            color: var(--charcoal);
+            text-align: center;
+            font-weight: 500;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .placeholder {
+            color: #999;
+            font-style: italic;
+        }
+
+        .generate-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--rose) 0%, var(--deep-rose) 100%);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .generate-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .generate-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .generate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px var(--shadow);
+        }
+
+        .generate-btn:active {
+            transform: translateY(0);
+        }
+
+        .generate-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .flirt-text.animated {
+            animation: fadeInUp 0.5s ease;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .card {
+                padding: 35px 25px;
+            }
+
+            .designer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .flirt-text {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" id="card">
+            <h1>Designer Flirt 💘</h1>
+            <p class="subtitle">Choose your design discipline and get a custom pickup line</p>
+            
+            <div class="designer-grid">
+                <div class="designer-option" data-type="ui-ux">
+                    <span class="designer-emoji">🎨</span>
+                    <span class="designer-label">UI/UX Designer</span>
+                </div>
+                <div class="designer-option" data-type="graphic">
+                    <span class="designer-emoji">✨</span>
+                    <span class="designer-label">Graphic Designer</span>
+                </div>
+                <div class="designer-option" data-type="product">
+                    <span class="designer-emoji">💡</span>
+                    <span class="designer-label">Product Designer</span>
+                </div>
+                <div class="designer-option" data-type="web">
+                    <span class="designer-emoji">💻</span>
+                    <span class="designer-label">Web Designer</span>
+                </div>
+                <div class="designer-option" data-type="motion">
+                    <span class="designer-emoji">🎬</span>
+                    <span class="designer-label">Motion Designer</span>
+                </div>
+                <div class="designer-option" data-type="brand">
+                    <span class="designer-emoji">🏆</span>
+                    <span class="designer-label">Brand Designer</span>
+                </div>
+            </div>
+
+            <div class="flirt-display">
+                <div class="flirt-text placeholder" id="flirtText">
+                    Select a designer type above to get started
+                </div>
+            </div>
+
+            <button class="generate-btn" id="generateBtn" disabled>
+                <span class="btn-text">💕 Generate Flirt Line</span>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const flirtLines = {
+            'ui-ux': [
+                "Are you a user flow? Because I'd follow you anywhere 😍",
+                "Is your name Figma? Because you've got all the right components",
+                "You must be a low-fidelity wireframe, because I want to see you in high definition",
+                "Are you A/B testing? Because you're definitely the winning variant",
+                "Call me your end user, because I'm totally obsessed with your experience",
+                "Are you a design system? Because you've got perfect consistency and I can't stop referencing you",
+                "You must be dark mode, because you make everything look better",
+                "Is your love language accessibility? Because you're inclusive of my heart",
+                "Are you a prototype? Because I want to test this connection",
+                "You must be using the golden ratio, because your proportions are absolutely perfect"
+            ],
+            'graphic': [
+                "Are you using the pen tool? Because you just drew me in",
+                "Is your name Pantone? Because you're the perfect match",
+                "You must be a vector, because you're infinitely scalable in my heart",
+                "Are you kerning? Because we have the perfect spacing",
+                "Call me your canvas, because I want you to make your mark on me",
+                "Are you a gradient? Because you make everything smoother and more beautiful",
+                "You must be in CMYK, because you print perfectly in my mind",
+                "Is your alignment set to center? Because you're the focus of my attention",
+                "Are you a custom typeface? Because you're one of a kind",
+                "You must be working with layers, because you've got so much depth"
+            ],
+            'product': [
+                "Are you a product roadmap? Because I can see a future with you",
+                "You must be solving a pain point, because you make everything better",
+                "Is your name MVP? Because you're my Most Valuable Person",
+                "Are you iterating? Because you keep getting better every time I see you",
+                "Call me your user persona, because I want to be the one you design for",
+                "Are you a feature release? Because everyone's excited when you arrive",
+                "You must be customer feedback, because you're always on my mind",
+                "Is your design thinking human-centered? Because you center my whole world",
+                "Are you a product sprint? Because you make my heart race",
+                "You must be a north star metric, because you're the measure of my success"
+            ],
+            'web': [
+                "Are you CSS? Because you style everything perfectly",
+                "You must be responsive design, because you look good on every level",
+                "Is your name localhost? Because I want to host you in my heart",
+                "Are you using flexbox? Because you align perfectly with me",
+                "Call me your HTTP request, because I always want a response from you",
+                "Are you JavaScript? Because you make my heart function",
+                "You must be SEO optimized, because I can't stop searching for you",
+                "Is your code minified? Because you're perfectly efficient",
+                "Are you a CSS animation? Because you bring everything to life",
+                "You must be a PWA, because you work perfectly offline and online"
+            ],
+            'motion': [
+                "Are you 60fps? Because you're smooth as can be",
+                "You must be easing curves, because you make everything feel natural",
+                "Is your name After Effects? Because you have all the right effects on me",
+                "Are you keyframing? Because every moment with you is picture perfect",
+                "Call me your timeline, because I want to spend every second with you",
+                "Are you motion blur? Because you make my heart race",
+                "You must be bouncing, because you make my heart skip a beat",
+                "Is your animation looping? Because I could watch you forever",
+                "Are you using anticipation? Because I can't wait to see you again",
+                "You must be rendered in 4K, because every detail about you is stunning"
+            ],
+            'brand': [
+                "Are you a brand identity? Because you're unforgettable",
+                "You must be a logo, because you represent everything I'm looking for",
+                "Is your name brand equity? Because your value keeps increasing",
+                "Are you a style guide? Because I want to follow your lead",
+                "Call me your target audience, because you speak directly to my heart",
+                "Are you brand positioning? Because you stand out from everyone else",
+                "You must be a color palette, because you bring harmony to my life",
+                "Is your messaging on-brand? Because everything you say resonates with me",
+                "Are you a brand story? Because I want to be part of your narrative",
+                "You must be authentic branding, because you're genuinely perfect"
+            ]
+        };
+
+        let selectedType = null;
+        const options = document.querySelectorAll('.designer-option');
+        const generateBtn = document.getElementById('generateBtn');
+        const flirtText = document.getElementById('flirtText');
+        const card = document.getElementById('card');
+
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                options.forEach(opt => opt.classList.remove('selected'));
+                option.classList.add('selected');
+                selectedType = option.dataset.type;
+                generateBtn.disabled = false;
+                
+                if (flirtText.classList.contains('placeholder')) {
+                    flirtText.classList.remove('placeholder');
+                    flirtText.textContent = 'Ready to flirt! Click the button below 💖';
+                }
+            });
+        });
+
+        generateBtn.addEventListener('click', () => {
+            if (!selectedType) return;
+
+            const lines = flirtLines[selectedType];
+            const randomLine = lines[Math.floor(Math.random() * lines.length)];
+            
+            flirtText.classList.remove('animated');
+            flirtText.classList.remove('placeholder');
+            
+            setTimeout(() => {
+                flirtText.textContent = randomLine;
+                flirtText.classList.add('animated');
+                card.classList.add('active');
+                
+                setTimeout(() => {
+                    card.classList.remove('active');
+                }, 2000);
+            }, 50);
+        });
+    </script>
+</body>
+</html>
